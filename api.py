@@ -1,12 +1,10 @@
 import time
 from flask import Flask, render_template
 from flask import request
-import json
 import re
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
-import os
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -139,5 +137,5 @@ class Crawler:
         return emails
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(debug=False, host='0.0.0.0', port=port, ssl_context=('adhoc'))
+    # port = int(os.environ.get('PORT', 5000))
+    app.run(debug=False, host='0.0.0.0', ssl_context=('adhoc'))
